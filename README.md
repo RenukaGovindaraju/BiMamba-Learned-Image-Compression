@@ -1,28 +1,63 @@
-Bi-Mamba: Efficient Bi-Directional State Space Models for Learned Image Compression
+# 🚀 Bi-Mamba: Efficient Bi-Directional State Space Models for Learned Image Compression
 
-![Python](https://img.shields.io/badge/Python-3.10-blue) 
-
-![PyTorch](https://img.shields.io/badge/PyTorch-2.x-red) 
-
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![PyTorch](https://img.shields.io/badge/PyTorch-2.x-red)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-📌 Abstract
+---
 
-JPEG
+## 📌 Abstract
 
-Ballé2018
+Modern Learned Image Compression (LIC) frameworks are predominantly built upon Convolutional Neural Networks (CNNs) or Transformer architectures. While CNNs suffer from limited receptive fields, Transformers incur quadratic computational complexity **O(n²)**, making them computationally expensive for high-resolution inputs.
 
-Cheng2020
+This repository introduces the **Hierarchical Bidirectional Mamba (BiMamba) Autoencoder**, a novel linear-time State Space Model (SSM)-based architecture for efficient image compression. The proposed framework captures long-range spatial dependencies using bidirectional sequential modeling while maintaining computational efficiency.
 
-Particularly strong performance is observed at bitrates below 0.5 bpp.
+BiMamba integrates a joint hyperprior and context-based entropy model to achieve improved rate-distortion performance across multiple bitrates, particularly in low-bitrate regimes (< 0.5 bpp).
 
-📈 Rate-Distortion Curves
+---
 
-Kodak RD Curve
+## 🔥 Key Contributions
 
-Tecnick RD Curve
+- ✅ Bidirectional State Space Modeling for global context learning  
+- ✅ Hierarchical multi-scale latent representation  
+- ✅ Joint hyperprior + context-dependent entropy modeling  
+- ✅ Linear-time computational complexity  
+- ✅ Superior perceptual quality at low bitrates (< 0.5 bpp)  
+- ✅ Improved LPIPS and MS-SSIM performance compared to conventional baselines  
 
-📁 Repository Structure
+---
+
+## 📊 Experimental Results
+
+### 📂 Datasets
+- Kodak  
+- Tecnick  
+
+### 📈 Evaluation Metrics
+- PSNR  
+- MS-SSIM  
+- LPIPS  
+- BD-Rate  
+
+BiMamba demonstrates improved perceptual quality compared to:
+
+- JPEG  
+- Ballé2018  
+- Cheng2020  
+
+Particularly strong performance is observed at bitrates below **0.5 bpp**, where global contextual modeling significantly enhances reconstruction fidelity.
+
+---
+
+## 📈 Rate-Distortion Curves
+
+![Kodak RD Curve](phd_work2_final/Kodak_RD_Curves.png)  
+![Tecnick RD Curve](phd_work2_final/Tecnick_RD_Curves.png)
+
+---
+
+## 📁 Repository Structure
+
 
 model.py # Core BiMamba architecture
 
