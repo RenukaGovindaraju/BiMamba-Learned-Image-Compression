@@ -1,0 +1,13 @@
+# Ignore large datasets
+phd_work2_final/Kodak/
+phd_work2_final/Tecnick/
+
+# Ignore model checkpoints
+*.pth
+*.tar
+
+# Ignore zip files
+*.zip
+
+# Ignore cache
+__pycache__/
