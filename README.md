@@ -76,6 +76,7 @@ conda create -n bimamba python=3.10
 conda activate bimamba
 
 pip install torch torchvision numpy matplotlib pandas tqdm
+
 ▶️ Training
 
 python train1.py
@@ -99,6 +100,7 @@ Context-adaptive probability estimation
 Rate-distortion optimized training objective
 
 The architecture achieves global spatial awareness while maintaining linear computational complexity O(n).
+
 📄 Citation
 
 If you use this work in your research, please cite:
@@ -109,10 +111,14 @@ title={Bi-Mamba: Efficient Bi-Directional State Space Models for Learned Image C
 
 author={Renuka Govindaraju and S. Vidhusha},
 
-year={2026} }
+year={2026} 
+
+}
+
 License
 
 This project is released under the MIT License.
+
 👩‍🔬 Authors
 
 Renuka Govindaraju
