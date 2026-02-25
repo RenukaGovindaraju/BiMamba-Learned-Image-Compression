@@ -1,62 +1,85 @@
-# 🧠 Image Compression and Decompression
+Bi-Mamba: Efficient Bi-Directional State Space Models for Learned Image Compression
 
-This project implements a Mamba-based deep learning framework for efficient image compression and decompression. The model is trained to minimize distortion while maximizing compression efficiency.
+![Python](https://img.shields.io/badge/Python-3.10-blue) 
 
----
+![PyTorch](https://img.shields.io/badge/PyTorch-2.x-red) 
 
-## 📊 Validation Results
+![License](https://img.shields.io/badge/License-MIT-green)
 
-The following validation graphs are generated to evaluate the model performance:
+📌 Abstract
 
-- **BPP vs PSNR**
-- **BPP vs Loss**
+JPEG
 
-You can find the plot here:  
-📁 `validation_bpp_curves.png`
+Ballé2018
 
----
+Cheng2020
 
-## 🖼️ Reconstructed Images
+Particularly strong performance is observed at bitrates below 0.5 bpp.
 
-The reconstructed images demonstrate how well the model preserves visual quality after compression. Some sample images are:
+📈 Rate-Distortion Curves
 
-- `kodim01.png`
-- `kodim04.png`
-- `kodim07.png`
+Kodak RD Curve
 
-All reconstructed output images are located in the folder:  
-�� `reconstructed_images/`
+Tecnick RD Curve
 
-These images were generated using the **best trained model checkpoint**:
+📁 Repository Structure
 
-📍 `experiments/Mamba_Final_Correct_Path/checkpoints/best_model_e081_loss0.4181.pth.tar`
+model.py # Core BiMamba architecture
 
-> ℹ️ **Note**: This model file exceeds GitHub's upload limit of 100MB, so it is hosted externally.
+train1.py # Training pipeline
 
----
+test_final_proposed_safe.py # Evaluation script
 
-## �� Download Best Model
+abla_final.py # Ablation study
 
-You can download the best model checkpoint from this link:  
-👉 [Download best_model_e081_loss0.4181.pth.tar](https://drive.google.com/your-shareable-link)
+phd_work2_final/ │── Average_Results.csv │── Detailed_Results.csv │── Kodak/ │── Tecnick/
 
----
+⚙️ Installation
 
-## 📦 Folder Structure
+conda create -n bimamba python=3.10
 
+conda activate bimamba
 
----
+pip install torch torchvision numpy matplotlib pandas tqdm
+▶️ Training
 
-## 🧪 Evaluation Metrics
+python train1.py
 
-The model performance is evaluated using:
+🧪 Evaluation
 
-- **PSNR (Peak Signal-to-Noise Ratio)**
-- **MS-SSIM (Multi-Scale Structural Similarity Index)**
-- **Compression Ratio (BPP)**
+python test_final_proposed_safe.py
 
----
+🧠 Model Overview
 
-## ✍️ Citation
+The proposed BiMamba architecture consists of:
 
-If you use this project in your research or publication, please cite it appropriately.
+Hierarchical encoder with bidirectional State Space layers
+
+Multi-scale latent representation
+
+Hyperprior-based entropy modeling
+
+Context-adaptive probability estimation
+
+Rate-distortion optimized training objective
+
+The architecture achieves global spatial awareness while maintaining linear computational complexity O(n).
+📄 Citation
+
+If you use this work in your research, please cite:
+
+@article{bimamba2026,
+
+title={Bi-Mamba: Efficient Bi-Directional State Space Models for Learned Image Compression},
+
+author={Renuka Govindaraju and S. Vidhusha},
+
+year={2026} }
+License
+
+This project is released under the MIT License.
+👩‍🔬 Authors
+
+Renuka Govindaraju
+
+S. Vidhusha
